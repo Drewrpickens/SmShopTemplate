@@ -22,8 +22,9 @@ function Home() {
     const timer = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
     }, 5000);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]); 
 
   const categories = [
     { name: "Alternative", image: Alternative },
